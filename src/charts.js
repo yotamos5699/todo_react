@@ -1,4 +1,4 @@
-import BarChart from "./components/charts/BarChart.js";
+import BarChart from "./components/BarChart.js";
 import Select from "react-select";
 import { useState } from "react";
 import { DateRange } from "@mui/icons-material";
