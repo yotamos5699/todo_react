@@ -3,6 +3,9 @@ import "./App.css";
 import { Task } from "./components/Task";
 import { FormLine } from "./components/Form";
 import Helper from "./Helper";
+
+let path = 'https://gatavigdorapi.herokuapp.com'
+let local = 'http://localhost:5000'
 function App() {
   const [itemList, setItemList] = useState([]);
   const [lineData, setLineData] = useState({
@@ -33,7 +36,7 @@ function App() {
       redirect: "follow",
     };
 
-    fetch("http://localhost:5000/api/updateSpacielOrders", requestOptions)
+    fetch(`${path}/api/updateSpacielOrders`, requestOptions)
       .then((response) => response.text())
       .then((result) => {
         console.log(result);
@@ -68,7 +71,7 @@ function App() {
       redirect: "follow",
     };
 
-    fetch("http://localhost:5000/api/updateSpacielOrders", requestOptions)
+    fetch(`${path}/api/updateSpacielOrders`, requestOptions)
       .then((response) => response.text())
       .then((result) => console.log(result))
       .then((result) => setItemList([]))
