@@ -1,4 +1,4 @@
-import BarChart from "./components/charts/BarChart";
+import BarChart from "./components/charts/BarChart.js";
 import Select from "react-select";
 import { useState } from "react";
 import { DateRange } from "@mui/icons-material";
@@ -109,7 +109,6 @@ const Page = () => {
       <input
         name="endDate"
         type="date"
-       
         onChange={handleDate}
         placeholder="תאריך סיום"
       />
