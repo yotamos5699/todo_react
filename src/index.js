@@ -2,7 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 import App from "./App";
-import Page from "./charts";
+import Page from "charts";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
@@ -10,8 +10,12 @@ root.render(
     <Router>
       <nav className="nav-bar">
         <div>
-        <Link className="aa" to={"/"}>הזמנה</Link>
-        <Link className="bb" to={"/charts"}>מידע</Link>
+          <Link className="aa" to={"/"}>
+            הזמנה
+          </Link>
+          <Link className="bb" to={"/charts"}>
+            מידע
+          </Link>
         </div>
       </nav>
       <Routes>
