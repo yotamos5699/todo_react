@@ -2,6 +2,8 @@ import { useState } from "react";
 import "./App.css";
 import { Task } from "./components/Task";
 import { FormLine } from "./components/Form";
+import { BrowserRouter as Router, Routes,Route, Li } from "react-router-dom"
+import Page from './components/charts'
 import Helper from "./Helper";
 
 let path = 'https://gatavigdorapi.herokuapp.com'
