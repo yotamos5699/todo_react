@@ -18,13 +18,43 @@ function App() {
     isInStock: true,
   });
 
+  const showAll = async () => {
+    var myHeaders = new Headers();
+    myHeaders.append("Content-Type", "application/json");
+
+    var raw = JSON.stringify({
+      type: 1,
+    });
+
+    var requestOptions = {
+      method: "POST",
+      headers: myHeaders,
+      body: raw,
+      redirect: "follow",
+    };
+
+    fetch("http://localhost:5000/api/updateSpacielOrders", requestOptions)
+      .then((response) => response.text())
+      .then((result) => {
+        console.log(result);
+        return result;
+      })
+      .then((result) => JSON.parse(result))
+      .then((result) => {
+        console.log(result);
+        return result;
+      })
+      .then((result) => setItemList(result.data))
+      .catch((error) => console.log("error", error));
+  };
+
   const updateDB = async () => {
     var myHeaders = new Headers();
     myHeaders.append("Content-Type", "application/json");
-    let isDataExist = itemList.length > 0 ? true :false
-    if(!isDataExist){
-      console.log('no data')
-      return
+    let isDataExist = itemList.length > 0 ? true : false;
+    if (!isDataExist) {
+      console.log("no data");
+      return;
     }
     var raw = JSON.stringify({
       type: 2,
@@ -41,7 +71,7 @@ function App() {
     fetch("http://localhost:5000/api/updateSpacielOrders", requestOptions)
       .then((response) => response.text())
       .then((result) => console.log(result))
-      .then(setItemList([]))
+      .then((result) => setItemList([]))
       .catch((error) => console.log("error", error));
   };
 
@@ -122,6 +152,7 @@ function App() {
   return (
     <div className="App">
       <FormLine
+        showAll={showAll}
         updateDB={updateDB}
         setLineData={setLineData}
         lineData={lineData}

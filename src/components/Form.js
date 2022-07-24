@@ -106,8 +106,11 @@ export const FormLine = (props) => {
   return (
     <div className="addItem">
       <div className="chooseCastumer">
+        <button className="appB" onClick={props.showAll}>
+          כל המידע{" "}
+        </button>
         <button className="appB" onClick={props.updateDB}>
-          עדכן וצא{" "}
+          עדכן{" "}
         </button>
         {lineData.isRenderd ? (
           <Select
