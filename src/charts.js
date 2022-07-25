@@ -1,7 +1,7 @@
 import BarChart from "./components/BarChart.js";
 import Select from "react-select";
 import { useState } from "react";
-import { DateRange } from "@mui/icons-material";
+// import { DateRange } from "@mui/icons-material";
 //import DatePicker from 'react-datepicker'
 let charts = [
   { value: "בר", label: "בר" },
@@ -14,7 +14,7 @@ const Page = () => {
   let [chartType, setChartType] = useState();
   let [chartData, setChartData] = useState();
 
-  let path = "https://gatavigdorapi.herokuapp.com";
+  let path2 = "https://gatavigdorapi.herokuapp.com";
 
   const fetchData = async () => {
     var myHeaders = new Headers();
@@ -31,7 +31,7 @@ const Page = () => {
       redirect: "follow",
     };
 
-    fetch(`${path}/api/updateSpacielOrders`, requestOptions)
+    fetch(`${path2}/api/updateSpacielOrders`, requestOptions)
       .then((response) => response.text())
       .then((result) => {
         console.log(result);
@@ -67,7 +67,7 @@ const Page = () => {
       })
       .then((data) => {
         setChartData({
-          labels: data.map((row) => row.date.getDay()),
+          labels: data.map((row) => row.date),
           datasets: [
             {
               label: "כמות ליום",

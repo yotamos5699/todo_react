@@ -2,12 +2,10 @@ import { useState } from "react";
 import "./App.css";
 import { Task } from "./components/Task";
 import { FormLine } from "./components/Form";
-import { BrowserRouter as Router, Routes,Route, Li } from "react-router-dom"
-import Page from './components/charts'
-import Helper from "./Helper";
+import { BrowserRouter as Router, Routes, Route, Li } from "react-router-dom";
 
-let path = 'https://gatavigdorapi.herokuapp.com'
-let local = 'http://localhost:5000'
+let path2 = "https://gatavigdorapi.herokuapp.com";
+//let local = 'http://localhost:5000'
 function App() {
   const [itemList, setItemList] = useState([]);
   const [lineData, setLineData] = useState({
@@ -38,7 +36,7 @@ function App() {
       redirect: "follow",
     };
 
-    fetch(`${path}/api/updateSpacielOrders`, requestOptions)
+    fetch(`${path2}/api/updateSpacielOrders`, requestOptions)
       .then((response) => response.text())
       .then((result) => {
         console.log(result);
@@ -73,7 +71,7 @@ function App() {
       redirect: "follow",
     };
 
-    fetch(`${path}/api/updateSpacielOrders`, requestOptions)
+    fetch(`${path2}/api/updateSpacielOrders`, requestOptions)
       .then((response) => response.text())
       .then((result) => console.log(result))
       .then((result) => setItemList([]))

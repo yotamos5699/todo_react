@@ -109,6 +109,7 @@ export const FormLine = (props) => {
         <button className="appB" onClick={props.showAll}>
           כל המידע{" "}
         </button>
+
         <button className="appB" onClick={props.updateDB}>
           עדכן{" "}
         </button>
@@ -140,7 +141,12 @@ export const FormLine = (props) => {
         <button className="appB" onClick={props.addItemRow}>
           הוסף פריט{" "}
         </button>
-
+        <input
+          name="startDate"
+          type="date"
+          //onChange={handleDate}
+          placeholder="תאריך התחלה"
+        />
         {lineData.isRenderd ? (
           <input
             value={lineData.Quantity}
