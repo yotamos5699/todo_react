@@ -1,7 +1,7 @@
 import BarChart from "./components/BarChart.js";
 import Select from "react-select";
 import { useState } from "react";
-import { DateRange } from "@mui/icons-material";
+// import { DateRange } from "@mui/icons-material";
 //import DatePicker from 'react-datepicker'
 let charts = [
   { value: "בר", label: "בר" },
